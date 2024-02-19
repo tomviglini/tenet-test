@@ -13,7 +13,7 @@
 |
 */
 
-$router->get('/users', 'UserController@index');
+$router->get('/account/{accountId}/billing', 'BillingController@index');
 
 $router->get('/', function () use ($router) {
     return $router->app->version();

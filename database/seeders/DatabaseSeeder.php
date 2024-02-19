@@ -14,5 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(StorageLogsTableSeeder::class);
+        $this->call(ProxyLogsTableSeeder::class);
+        $this->call(SpeechTranslationLogsTableSeeder::class);
+        $this->call(BackofficeLogsTableSeeder::class);
     }
 }
