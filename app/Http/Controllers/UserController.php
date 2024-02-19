@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Models\User;
-use Carbon\Carbon;
+use App\Models\StorageLog;
 
 class UserController
 {
     public function index()
     {
-        $now = Carbon::now()->startOfMinute()->subMonth(1);
+        return StorageLog::cost(1)->get();
 
-        $storageLogs = [];
-        for($i = 0; $i < 5; $i++) {
-            $storageLogs[] = [
-                'created_at' => $now->toDateTimeString()
-            ];
-            $now->addMinute();
-        }
+        // $now = Carbon::now()->startOfMinute()->subMonth(1);
 
-        return $storageLogs;
+        // $storageLogs = [];
+        // for($i = 0; $i < 5; $i++) {
+        //     $storageLogs[] = [
+        //         'created_at' => $now->toDateTimeString()
+        //     ];
+        //     $now->addMinute();
+        // }
+
+        // return $storageLogs;
     }
 }
